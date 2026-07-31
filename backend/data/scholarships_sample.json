@@ -1,0 +1,988 @@
+[
+  {
+    "id": "S001",
+    "name": "大阪教育大学修学支援奨学金",
+    "amount": 100000,
+    "deadline": "2025-10-06",
+    "url": "https://osaka-kyoiku.ac.jp/campus/expense/syougaku/nihonjin.html",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": 5900000,
+      "gpa_min": null
+    },
+    "deadline_note": "例年9月上旬に募集要項公開、10月上旬締切（令和7年度実績：10月6日）。令和8年度分は本稿執筆時点で未公表",
+    "description": "【申込方法】個人申請（指導教員等の推薦を得て学生本人が提出）。【併用可否】要確認（大学公式ページに併給可否の明記なし）。【対象者】学部生。世帯年収目安350万〜590万円の中間所得層（国の修学支援新制度の対象外）。満45歳未満。【特有条件】休学期間を除く在学期間が修業年限内であること。休学中・休学予定でないこと。別枠で家計急変採用（一時金10万円、随時申請可）もあり。【スケジュール】募集時期は例年9月上旬に募集要項公開、10月上旬締切（令和7年度実績：10月6日）。令和8年度分は本稿執筆時点で未公表。11月中旬に採否通知、11月下旬〜12月頃に目録授与式。給付金額は1人5万円。【支給人数】一般採用40名程度、家計急変採用10名程度。"
+  },
+  {
+    "id": "S002",
+    "name": "日本学生支援機構給付奨学金（在学採用）",
+    "amount": null,
+    "deadline": null,
+    "url": "https://osaka-kyoiku.ac.jp/campus/expense/syougaku/nihon/kyufu.html",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "春（例年3月上旬〜）・秋（例年9〜10月頃）の年2回",
+    "description": "【申込方法】大学経由（学内で申請書類を提出）。【併用可否】条件付き可（国の制度のため他の給付型と原則併用可能だが、所得等により調整の場合あり）。【対象者】学部生。家計基準（第Ⅰ〜Ⅳ区分）・成績基準あり。【特有条件】授業料等減免とセットの制度。2026年10月に支援区分（家計）の見直しが予定されている。【スケジュール】募集時期は春（例年3月上旬〜）・秋（例年9〜10月頃）の年2回。採用決定後、原則毎月支給。【支給人数】予算の範囲内（人数上限は非公表）。"
+  },
+  {
+    "id": "S003",
+    "name": "日本学生支援機構給付奨学金（家計急変採用）",
+    "amount": null,
+    "deadline": null,
+    "url": "https://osaka-kyoiku.ac.jp/campus/expense/syougaku/nihon/kakeikyuhen.html",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "随時",
+    "description": "【申込方法】大学経由（学内で申請書類を提出）。【併用可否】条件付き可（在学採用と同基準）。【対象者】在学中に生計維持者の家計が急変した学部生。【特有条件】家計急変の事実を証明する書類が必要。【スケジュール】募集時期は随時。審査後、原則毎月支給。【支給人数】不明。"
+  },
+  {
+    "id": "S004",
+    "name": "大阪府子ども・大学生等への食費支援事業",
+    "amount": 10000,
+    "deadline": null,
+    "url": "https://www.pref.osaka.lg.jp/o090010/fukushisomu/kodomoshokuhishien/index.html",
+    "conditions": {
+      "grades": null,
+      "school_types": null,
+      "faculties": null,
+      "majors": null,
+      "field_tags": null,
+      "residences": ["大阪府"],
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "2026年度は3月下旬〜6月下旬に申請受付済み。次年度実施は未定",
+    "description": "【申込方法】個人申請（大阪府へオンライン申請）。【併用可否】要確認（現物給付のため通常は他制度に影響しないと考えられるが公式未確認）。【対象者】大阪府内に居所を有する19〜22歳（大学在籍は必須要件ではない）。【特有条件】現金ではなく米クーポン等の現物給付。堺市等一部市は独自に上乗せあり。【スケジュール】募集時期は2026年度は3月下旬〜6月下旬に申請受付済み。次年度実施は未定。決定後にクーポン・食料品を交付。【支給人数】予算上限あり（人数上限は非公表）。"
+  },
+  {
+    "id": "S005",
+    "name": "川西市教育委員会 入学金減免対象者向け給付金",
+    "amount": null,
+    "deadline": null,
+    "url": "https://www.city.kawanishi.hyogo.jp/kurashi/1017448/1017455/syogakukin/1014766.html",
+    "conditions": {
+      "grades": ["B1"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": ["川西市"],
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年7月末",
+    "description": "【申込方法】大学経由（学内で募集案内）。【併用可否】要確認。【対象者】学部1年生。修学支援新制度第2〜3区分採用者で、保護者が川西市内在住。【特有条件】入学金減免対象者向けの給付。居住地要件あり。【スケジュール】募集時期は例年7月末。採否決定・給付時期は要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S006",
+    "name": "愛媛県奨学金返還支援制度",
+    "amount": null,
+    "deadline": null,
+    "url": "https://www.pref.ehime.jp/page/5700.html",
+    "conditions": {
+      "grades": ["B4"],
+      "school_types": null,
+      "faculties": null,
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年2月頃",
+    "description": "【申込方法】個人申請（愛媛県へ応募）。【併用可否】要確認。【対象者】卒業予定の学部・大学院生で、愛媛県内の登録企業へ就職する者。【特有条件】給付ではなくJASSO奨学金等の返還額を支援する制度。【スケジュール】募集時期は例年2月頃。就職後、返還支援の実施時期は要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S007",
+    "name": "三重県奨学金返還支援制度",
+    "amount": null,
+    "deadline": null,
+    "url": "https://www.pref.mie.lg.jp/KIKAKUK/HP/miesalon/74737039887_00002.htm",
+    "conditions": {
+      "grades": ["B3", "B4"],
+      "school_types": null,
+      "faculties": null,
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年12月頃",
+    "description": "【申込方法】個人申請（三重県へ応募）。【併用可否】要確認。【対象者】最終学年またはその1年前で、三重県内での居住・就業を希望する学生。【特有条件】給付ではなくJASSO第一種等の返還額を支援する制度。【スケジュール】募集時期は例年12月頃。就職後、返還支援の実施時期は要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S008",
+    "name": "宮崎県奨学会",
+    "amount": 300000,
+    "deadline": null,
+    "url": null,
+    "conditions": {
+      "grades": ["B1"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年5〜6月",
+    "description": "【申込方法】要確認（大教大掲示で確認、応募経路の詳細は要確認）。【併用可否】要確認。【対象者】宮崎県に本籍または生計維持者が居住し、宮崎県の教員を志望する学部新入生。【特有条件】給付型ではなく貸与型。県内教員として一定期間勤務すると返還免除。【スケジュール】募集時期は例年5〜6月。採否決定・給付（貸与）開始時期は要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S009",
+    "name": "博報堂教育財団奨学金",
+    "amount": null,
+    "deadline": null,
+    "url": "https://www.hakuhodofoundation.or.jp/scholarship/",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年4月末（大学ごとに学内締切あり）",
+    "description": "【申込方法】大学推薦のみ（学生本人からの直接応募・問い合わせは一切不可と明記）。【併用可否】併用不可（他の給付型奨学金制度との併給不可。ただし貸与型奨学金や国立大学の授業料免除制度との併用は可。免除利用時は減額）。【対象者】大教大を含む指定「推薦依頼大学」59校の学部生で、小学校・特別支援学校・中学高校国語科の教員志望者。【特有条件】大学が学内選考の上、財団の奨学生として推薦する者。国立大学は年額60万円、自宅外生はさらに加算の可能性。【スケジュール】募集時期は例年4月末（大学ごとに学内締切あり）。採否は大学経由で通知。【支給人数】財団全体で86名（2025年度実績）。"
+  },
+  {
+    "id": "S010",
+    "name": "浜教育財団",
+    "amount": 480000,
+    "deadline": null,
+    "url": "https://hama-foundation.org/",
+    "conditions": {
+      "grades": ["B3"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年5月末",
+    "description": "【申込方法】個人申請（郵送で財団へ直接応募）。【併用可否】他制度併用可（「他の奨学金を受けている場合でも応募可」と財団公式に明記）。【対象者】教育学部の学部3年生、25歳以下。【特有条件】2年間の継続給付。【スケジュール】募集時期は例年5月末。要確認。【支給人数】毎年度10名。"
+  },
+  {
+    "id": "S011",
+    "name": "谷スポーツ振興財団",
+    "amount": 480000,
+    "deadline": null,
+    "url": "https://tani-sportfoundation.org/scholarship/",
+    "conditions": {
+      "grades": ["B3"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": ["学校教育教員養成課程-保健体育専攻"],
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年5月末",
+    "description": "【申込方法】大学推薦（大教大の特定専攻限定）。【併用可否】要確認（サイトへのアクセス不可のため未確認）。【対象者】大教大 教育学部学校教育教員養成課程 保健体育専攻の学部3年生。【特有条件】大教大の当該専攻の学生のみが対象。【スケジュール】募集時期は例年5月末。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S012",
+    "name": "オークネット財団",
+    "amount": 480000,
+    "deadline": null,
+    "url": "https://aucnetfoundation.org/scholarship/",
+    "conditions": {
+      "grades": ["B3"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": ["教育協働学科-理数情報専攻-数理情報コース"],
+      "field_tags": ["理系"],
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年4月〜5月（2024年度実績：4月1日〜5月31日）",
+    "description": "【申込方法】要確認（財団公開情報と大教大向け情報に食い違いあり）。【併用可否】他制度併用可（財団公式に明記）。【対象者】経済学部・情報学部系の学部3年生（財団公開情報）。ただし大教大向けには理数情報専攻限定との情報もあり、要大学確認。【特有条件】対象専攻の記載に財団公開情報（経済・情報系学部）と大学経由情報（理数情報専攻）で相違があるため、応募前に大学窓口で要確認。【スケジュール】募集時期は例年4月〜5月（2024年度実績：4月1日〜5月31日）。要確認。【支給人数】20名。"
+  },
+  {
+    "id": "S013",
+    "name": "先端教育振興機構",
+    "amount": 480000,
+    "deadline": null,
+    "url": "https://www.aepi.jp/",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": null,
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "募集要項で要確認（具体的な日の記載なし）",
+    "description": "【申込方法】郵送（直接の持参は受け付けない）。【併用可否】他制度併用可（JASSO給付・民間奨学金・大学独自制度いずれも「他の奨学金を受けている場合でも応募可」と明記）。【対象者】専門職大学院（教職大学院等）の新1年生。学部生は対象外。日本国籍、35歳以下、GPA3.0以上目安。【特有条件】世帯人数に応じた家計基準あり（例：4人世帯・給与所得者700万円以下）。2年間（1・2年次）給付。【スケジュール】募集時期は募集要項で要確認（具体的な日の記載なし）。書類選考、本人・在学校へ書面通知。【支給人数】毎年度10名。"
+  },
+  {
+    "id": "S014",
+    "name": "日本国際教育支援協会（JEES）日本語教育普及奨学金",
+    "amount": 600000,
+    "deadline": null,
+    "url": "https://www.jees.or.jp/jimu/foundation/",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年5月中旬",
+    "description": "【申込方法】大学推薦。【併用可否】要確認（サイトへのアクセス不可のため未確認）。【対象者】日本語教育能力検定試験合格者で、日本語指導者等を目指す学部・大学院生。【特有条件】検定試験合格が前提条件。【スケジュール】募集時期は例年5月中旬。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S015",
+    "name": "中村積善会",
+    "amount": 600000,
+    "deadline": null,
+    "url": "https://nakamurasekizenkai.org/",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年5月下旬（学内選考は4月末頃）",
+    "description": "【申込方法】大学推薦（学内選考を経て推薦を受けた者のみ応募可）。【併用可否】他制度併用可（「他の奨学金との併用に制限はありません」と財団公式に明記）。【対象者】学業優秀で経済的に修学困難な学部・大学院生、40歳以下。【特有条件】支給は最短修業年限まで。大阪教育大学が募集対象大学に含まれるかは、財団の募集大学一覧表が画像PDFのため未確認。【スケジュール】募集時期は例年5月下旬（学内選考は4月末頃）。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S016",
+    "name": "たけでん奨学財団",
+    "amount": 360000,
+    "deadline": null,
+    "url": "https://gaxi.jp/organization/aYkNm81mkX89olrv/project/oKx7XgrlWn8q1O2l",
+    "conditions": {
+      "grades": ["B2", "B3", "B4"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年3月1日〜4月30日",
+    "description": "【申込方法】学校経由の個人申請（学校担当者からガクシー上の申込リンクを受け取り、本人が入力）。【併用可否】他制度併用可（修学支援制度・他の給付型いずれも併用可とガクシー掲載の財団情報に明記）。【対象者】2年生以上、日本国籍、経済的困難。【特有条件】正規修業年限内で留年していないこと。標準化GPA2.5以上等の基準あり。【スケジュール】募集時期は例年3月1日〜4月30日。選考結果は6月下旬予定。【支給人数】32名程度。"
+  },
+  {
+    "id": "S017",
+    "name": "昭和教育振興財団",
+    "amount": 480000,
+    "deadline": null,
+    "url": "https://www.marutsutsu.co.jp/foundation/",
+    "conditions": {
+      "grades": ["B1"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "毎年5月20日（財団事務局必着）",
+    "description": "【申込方法】大学推薦（指定校応募、学内の奨学金係へ提出）。【併用可否】要確認（公式サイトに併給可否の明記なし）。【対象者】大阪教育大学を含む2026年度指定8大学（大阪大学・京都大学・神戸大学・大阪教育大学・大阪公立大学・関西大学・近畿大学・大阪工業大学）の学生。学年の明記なし（前回「1回生」としていたのは誤りの可能性あり）。【特有条件】選考は小論文試験。もとは理系学生中心だが、現在は学部不問で門戸を広げている。【スケジュール】募集時期は毎年5月20日（財団事務局必着）。要確認。【支給人数】2025年度実績：大阪教育大学から1名採用。"
+  },
+  {
+    "id": "S018",
+    "name": "杉本教育福祉財団",
+    "amount": 240000,
+    "deadline": null,
+    "url": null,
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "4月（具体的な日の記載なし）",
+    "description": "【申込方法】記載なし（学校長の推薦が必要）。【併用可否】修学支援制度との併用可。JASSO給付・他の民間奨学金との併給可否は記載なし。【対象者】大阪大学・大阪市立大学・大阪府立大学・大阪教育大学の4校に限る学生。学年の記載なし。【特有条件】経済的困窮・成績優秀が条件。【スケジュール】募集時期は4月（具体的な日の記載なし）。6月・12月に分けて支給。【支給人数】20名程度。"
+  },
+  {
+    "id": "S019",
+    "name": "木下記念事業団",
+    "amount": 720000,
+    "deadline": null,
+    "url": "http://www.k-zaidan.or.jp/",
+    "conditions": {
+      "grades": ["B2", "B3", "B4"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年4月下旬",
+    "description": "【申込方法】大学推薦のみ（個人からの直接出願は受け付けないと明記）。【併用可否】要確認（記載なし）。【対象者】日本国籍の学部2回生以上、25歳未満未婚。保護者資産2,000万円未満。【特有条件】全国47大学が対象。【スケジュール】募集時期は例年4月下旬。要確認。【支給人数】全国96名（令和7年度）、うち大阪教育大学から1名。"
+  },
+  {
+    "id": "S020",
+    "name": "大東育英会",
+    "amount": 240000,
+    "deadline": null,
+    "url": "https://www.daitoh.info/ikuei/guide.html",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年4月10日前後（大学により多少前後）",
+    "description": "【申込方法】大学推薦（学生課窓口で書類配布・提出、推薦書作成あり）。【併用可否】他制度併用可（同志社大学掲示に「特に併用に制限なし」と明記）。【対象者】大阪府下の大学に在学する学生、または大阪府下に住所を有する保護者を持つ学生。【特有条件】特になし。【スケジュール】募集時期は例年4月10日前後（大学により多少前後）。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S021",
+    "name": "小野奨学会",
+    "amount": 720000,
+    "deadline": null,
+    "url": "https://onosyougakukai.com/application.html",
+    "conditions": {
+      "grades": ["B1", "B2"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": ["大阪府"],
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "記載なし（要確認）",
+    "description": "【申込方法】大学推薦が必要。【併用可否】要確認（記載なし）。【対象者】大阪府下の大学に在学する学生・大学院生、または指定大学進学希望の大阪府下高校3年生（予約募集）。留学生含む。【特有条件】健康であること。優秀者には年間10万円の表彰あり。大阪府下在学の女子学生向け女子寮も運営。【スケジュール】募集時期は記載なし（要確認）。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S022",
+    "name": "G-7奨学財団",
+    "amount": null,
+    "deadline": "2026-04-20",
+    "url": "https://g7foundation.or.jp/syougaku.html",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年4月20日頃（学校が取りまとめて財団へ郵送）",
+    "description": "【申込方法】大学推薦（2021年度より。財団への直接応募は不可）。【併用可否】要確認（記載なし）。【対象者】大学生、高専専攻科生、大学院生（各学年）。【特有条件】助成期間は単年度、標準修業年限を上限に継続申請可。【スケジュール】募集時期は例年4月20日頃（学校が取りまとめて財団へ郵送）。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S023",
+    "name": "奥村奨学会",
+    "amount": 360000,
+    "deadline": null,
+    "url": "http://www.okumura.or.jp/recruitment/",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年5月上旬（年度表記に一部わかりにくい記載あり、要財団確認）",
+    "description": "【申込方法】大学推薦（学校長の推薦、学校窓口経由）。【併用可否】要確認（記載なし）。【対象者】学術優秀・品行方正で経済的困難な学部生（留学生含む）。【特有条件】留学生は月4万円（日本人学生は月3万円）。【スケジュール】募集時期は例年5月上旬（年度表記に一部わかりにくい記載あり、要財団確認）。要確認。【支給人数】大学生・大学院生合計15名（2025年度実績）。"
+  },
+  {
+    "id": "S024",
+    "name": "富本奨学会",
+    "amount": 360000,
+    "deadline": null,
+    "url": "http://tomimoto.or.jp/information.html",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": ["大阪府"],
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年4月24日頃",
+    "description": "【申込方法】要確認（大学推薦の可能性が高いが未確定）。【併用可否】併用不可の可能性（他大学掲示で「奨学金との併給は不可」の記載あり。大阪教育大学での適用は要確認）。【対象者】大阪府下の4年制大学に在学する学部1年次生（他大学掲示の情報。前回「学部生全般」としていたのは誤りの可能性）。【特有条件】要確認。【スケジュール】募集時期は例年4月24日頃。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S025",
+    "name": "山本猛夫記念奨学基金",
+    "amount": 360000,
+    "deadline": null,
+    "url": null,
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    }
+  },
+  {
+    "id": "S026",
+    "name": "明日花育英会",
+    "amount": 144000,
+    "deadline": null,
+    "url": null,
+    "conditions": {
+      "grades": ["B1"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年5月中旬",
+    "description": "【申込方法】大学推薦。【併用可否】要確認。【対象者】新入生のうち人物・学業ともに優秀で経済的支援が必要な者。【特有条件】学部1年生（新入生）のみが対象。【スケジュール】募集時期は例年5月中旬。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S027",
+    "name": "船井奨学会",
+    "amount": 480000,
+    "deadline": null,
+    "url": "https://funaishougakukai.or.jp/scholarship/",
+    "conditions": {
+      "grades": ["B1"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": ["大阪府"],
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年6月中旬",
+    "description": "【申込方法】大学推薦（学校長の推薦が必要）。【併用可否】要確認（記載なし）。【対象者】大阪府内在住・在学の学部1年生（新入生のみ）。【特有条件】一校あたりの応募人数制限はなし。【スケジュール】募集時期は例年6月中旬。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S028",
+    "name": "わかば財団",
+    "amount": 480000,
+    "deadline": null,
+    "url": "https://wakabaz.jp/jigyo.html",
+    "conditions": {
+      "grades": ["B1"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年4月末",
+    "description": "【申込方法】大学推薦のみ（学生から財団への直接応募は不可と明記）。【併用可否】併用不可（「他の団体等からの給付型奨学金受給の併用は不可」と明記）。【対象者】大阪大学・大阪教育大学・大阪公立大学の3校いずれかに在学する学部1回生。【特有条件】特になし。【スケジュール】募集時期は例年4月末。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S029",
+    "name": "キーエンス財団「がんばれ！日本の大学生」応援給付金",
+    "amount": 300000,
+    "deadline": null,
+    "url": "https://www.keyencefoundation.or.jp/scholarship02/",
+    "conditions": {
+      "grades": ["B2", "B3", "B4"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年4月中旬（次回は2027年2月頃募集開始予定と財団告知あり）",
+    "description": "【申込方法】個人申請（本人が財団へ直接応募、大学経由不可）。【併用可否】他制度併用可（JASSO給付を含む全ての奨学金との併用が可能と財団公式に明記）。【対象者】新1年生を除く学部生、23歳以下。【特有条件】最短修業年限で卒業見込みであることが応募資格。小論文（800字以内）による選考。【スケジュール】募集時期は例年4月中旬（次回は2027年2月頃募集開始予定と財団告知あり）。書類・小論文審査後に採否通知。給付時期は要確認。【支給人数】年度により変動（2025年度約3,500名、2026年度は5,000名）。"
+  },
+  {
+    "id": "S030",
+    "name": "平石教育財団",
+    "amount": 360000,
+    "deadline": "2025-06-13",
+    "url": "https://hiraishi-foundation.org/",
+    "conditions": {
+      "grades": ["B1"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": 4300000,
+      "gpa_min": null
+    },
+    "deadline_note": "2025年度実績：5月8日〜6月13日",
+    "description": "【申込方法】個人申請（財団HPで申請、郵送提出。応募は本人からに限ると明記）。【併用可否】他制度併用可（JASSO含む他の給付型・貸与型、修学支援新制度との併用可と明記）。【対象者】4年制大学の学部1年生。世帯所得300万円以下（年収目安430万円）。【特有条件】通信教育課程・夜間学部生・外国人留学生は対象外。【スケジュール】募集時期は2025年度実績：5月8日〜6月13日。選考結果は7月開催予定の理事会以降に通知。【支給人数】10名程度。"
+  },
+  {
+    "id": "S031",
+    "name": "エイブル文化振興財団",
+    "amount": null,
+    "deadline": "2026-05-08",
+    "url": "https://www.ablefoundation.or.jp/requirements/",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "2026年度実績：応募書類受付4月1日〜5月8日",
+    "description": "【申込方法】個人申請（応募フォーム入力→書類を財団へ郵送）。【併用可否】他制度併用可（明記）。【対象者】東京都・神奈川県・愛知県・大阪府の大学キャンパスに通学する学部生・短大生（大阪教育大学は対象地域に含まれる）。【特有条件】01コース（学業優秀）年60万円、02コース（住民税所得割非課税世帯）年40万円の2コース制。【スケジュール】募集時期は2026年度実績：応募書類受付4月1日〜5月8日。要確認。【支給人数】30名程度（01コース20名程度、02コース10名程度）。"
+  },
+  {
+    "id": "S032",
+    "name": "篠原欣子記念財団",
+    "amount": 540000,
+    "deadline": "2026-05-31",
+    "url": "https://ysmf.or.jp/program/welfare_support/",
+    "conditions": {
+      "grades": ["B1", "B3"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": ["福祉・保育系"],
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "2026年度実績：受付4月1日〜5月31日",
+    "description": "【申込方法】個人申請（学校推薦不要、直接応募制）。【併用可否】他制度併用可（他団体奨学金受給者でも応募可と明記）。【対象者】社会福祉系国家資格または幼稚園教諭免許取得を目指す1年生・3年生（関東地方及び山梨・長野・静岡・愛知・大阪府の学校が対象）。【特有条件】2026年度から春1回のみの募集に変更、募集人数を150名に拡大。【スケジュール】募集時期は2026年度実績：受付4月1日〜5月31日。給付開始は例年8月中旬予定。【支給人数】150名程度。"
+  },
+  {
+    "id": "S033",
+    "name": "ポート株式会社 ODYSSEY Scholarship Program",
+    "amount": 100000,
+    "deadline": "2026-06-30",
+    "url": "https://www.theport.jp/scholarship",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "2026年度第2期：4月1日〜6月30日",
+    "description": "【申込方法】個人申請（応募フォーム）。【併用可否】他制度併用可（Q&Aで明記）。【対象者】国内の高校・高専・専門学校・短大・大学・大学院の学生（学年不問）。【特有条件】学業成績・経済状況は選考基準としない。社会課題への貢献意欲を重視。【スケジュール】募集時期は2026年度第2期：4月1日〜6月30日。給付は例年9月下旬。【支給人数】年間10〜20名程度。"
+  },
+  {
+    "id": "S034",
+    "name": "全国大学生協連奨学財団 たすけあい奨学制度",
+    "amount": 120000,
+    "deadline": null,
+    "url": "https://www.univcoop.or.jp/syogakuzaidan/",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "扶養者死亡日から1年以内随時",
+    "description": "【申込方法】個人申請（Web/郵送で財団へ直接）。【併用可否】他制度併用可（明記）。【対象者】扶養者を1年以内に亡くした学生（大学生協組合員等）。【特有条件】扶養者死亡日から1年以内の応募に限る。【スケジュール】募集時期は扶養者死亡日から1年以内随時。要確認。【支給人数】非公表（予算次第）。"
+  },
+  {
+    "id": "S035",
+    "name": "MUFG学業継続ブリッジ奨学金",
+    "amount": 500000,
+    "deadline": "2026-07-03",
+    "url": "https://gaxi.jp/organization/JE4eOg2aKb6wWQXr/project/GMQ4e8DG9aRzLr0D",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "2026年度実績：6月8日〜7月3日",
+    "description": "【申込方法】個人申請。【併用可否】他制度併用可（明記）。【対象者】経済的理由による退学・休学の可能性がある学生。【特有条件】客観的資料での証明が必要。成績による選考は行わない。【スケジュール】募集時期は2026年度実績：6月8日〜7月3日。給付は8月中を予定。【支給人数】7名。"
+  },
+  {
+    "id": "S036",
+    "name": "ききみみ奨学金",
+    "amount": null,
+    "deadline": "2026-07-17",
+    "url": "https://gaxi.jp/organization/WEmzv6ZyMD8pXeyJ/project/aYkNm819BX89olrv",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "2026年度実績：6月12日〜7月17日",
+    "description": "【申込方法】個人申請。【併用可否】他制度併用可（明記）。【対象者】家計急変や経済的理由で中退・休学のリスクを抱える学生。【特有条件】金額は個別の状況に応じて審査の上決定。【スケジュール】募集時期は2026年度実績：6月12日〜7月17日。支給開始は例年9月上旬。【支給人数】予算内で選考による（人数枠なし）。"
+  },
+  {
+    "id": "S037",
+    "name": "黒木育英奨学金",
+    "amount": 480000,
+    "deadline": null,
+    "url": "http://kuroki-foundation.org/",
+    "conditions": {
+      "grades": ["B3"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年5月末",
+    "description": "【申込方法】個人申請（直接応募と大学掲示にも明記）。【併用可否】要確認。【対象者】両親または片親がいない世帯の学部3年生、25歳以下。【特有条件】日本国籍が条件。【スケジュール】募集時期は例年5月末。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S038",
+    "name": "あしなが育英会",
+    "amount": null,
+    "deadline": null,
+    "url": "https://www.ashinaga.org/scholarship/for-applicants/",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年5月中旬",
+    "description": "【申込方法】大学推薦を経た個人申請（学内で推薦書を受け取り、本人が財団へ直接応募）。【併用可否】他制度併用可（明記）。【対象者】保護者が病気・災害・自死等で死亡または重度障がいを負った家庭の学生（2001年4月2日以降生まれ）。【特有条件】給付型ではなく貸与型（無利子、20年で返還）。【スケジュール】募集時期は例年5月中旬。要確認。【支給人数】非公表（要件を満たせば基本的に採用される性質の制度）。"
+  },
+  {
+    "id": "S039",
+    "name": "交通遺児育英会",
+    "amount": null,
+    "deadline": null,
+    "url": "https://www.kotsuiji.com/infoscholarship",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "在学採用は例年10月末",
+    "description": "【申込方法】個人申請（財団へ直接）。【併用可否】他制度併用可（明記）。【対象者】保護者が交通事故で死亡または重度後遺障害を負った家庭の学生、25歳まで。【特有条件】貸与が中心（一部給付を含む）。【スケジュール】募集時期は在学採用は例年10月末。要確認。【支給人数】全国849名（令和6年度末在学奨学生の実績、うち大学生・短大生461名）。"
+  },
+  {
+    "id": "S040",
+    "name": "似鳥国際奨学金",
+    "amount": null,
+    "deadline": null,
+    "url": "https://www.nitorishougakuzaidan.com/application/",
+    "conditions": {
+      "grades": ["B1", "B2", "B3", "B4"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": 9000000,
+      "gpa_min": 2.5
+    },
+    "deadline_note": "例年4月下旬",
+    "description": "【申込方法】個人申請。【併用可否】併用不可（JASSO給付を含む他の給付型奨学金との併用不可と財団公式に明記）。【対象者】23歳以下の学部1〜4年生。世帯収入900万円以下目安。【特有条件】現在給付型奨学金を受給中の場合は、切替の要否を含め要検討。【スケジュール】募集時期は例年4月下旬。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S041",
+    "name": "さぽうと21生活支援プログラム",
+    "amount": 360000,
+    "deadline": null,
+    "url": "https://support21.or.jp/needsupport/scholarship-seikatsu/",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年12月頃募集開始",
+    "description": "【申込方法】個人申請（郵送で応募）。【併用可否】要確認（自団体内の他プログラムとの併給は不可と明記があるが、他団体奨学金との可否は記載なし）。【対象者】外国にルーツを持つ学生（難民背景、または定住・永住等の在留資格）。【特有条件】留学ビザは対象外。【スケジュール】募集時期は例年12月頃募集開始。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S042",
+    "name": "タウ・スカラシップ",
+    "amount": 2000000,
+    "deadline": null,
+    "url": "https://www.tau.co.jp/csr/scholarship",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "直近実績：2024年12月2日〜2025年1月6日",
+    "description": "【申込方法】個人申請（郵送またはメール）。【併用可否】条件付き可（自団体は制限を設けないが、相手方の制度が併用禁止の場合は取消しの可能性あり）。【対象者】満25歳未満で、スポーツ・芸術・学問・医療・介護等の分野で秀でた実績があり社会的支援が必要な者。【特有条件】書類審査→面接→最終面接の3段階選考。【スケジュール】募集時期は直近実績：2024年12月2日〜2025年1月6日。要確認。【支給人数】6〜8名程度。"
+  },
+  {
+    "id": "S043",
+    "name": "いであ環境・文化財団",
+    "amount": 250000,
+    "deadline": "2026-05-12",
+    "url": "https://ieaf.or.jp/scholarship",
+    "conditions": {
+      "grades": ["B2", "B3", "B4"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": ["環境分野", "芸術分野"],
+      "residences": null,
+      "income_max": null,
+      "gpa_min": 2.5
+    },
+    "deadline_note": "令和8年度実績：5月12日（財団必着）",
+    "description": "【申込方法】大学推薦（在籍大学の奨学金担当窓口経由。学生からの直接応募は不可）。【併用可否】他制度併用可（JASSO給付・民間奨学金・大学独自制度いずれも併給可と明記）。【対象者】学部2年生以上（大学院博士課程まで含む）。GPA2.5以上、環境保全分野または芸術（美術デザイン限定）分野。【特有条件】1推薦者につき応募者1名まで、各学部・研究科からの応募上限3名。環境分野は小論文、芸術分野は作品データの提出が必要。生成AIのみで作成した成果物は不可。【スケジュール】募集時期は令和8年度実績：5月12日（財団必着）。書類審査は6月予定、7月中旬に採否通知、7月頃給付開始。【支給人数】30名程度（環境・芸術分野の合計）。"
+  },
+  {
+    "id": "S044",
+    "name": "香雪美術館奨学金",
+    "amount": null,
+    "deadline": null,
+    "url": "https://www.kosetsumuseum.or.jp/mikage/scholarship/",
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": ["芸術系"],
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年4月中旬〜下旬（学校から財団への提出期限は例年4月28日頃）",
+    "description": "【申込方法】大学推薦（学校経由、推薦状必要）。【併用可否】要確認（記載なし）。【対象者】兵庫・大阪・京都・奈良・滋賀・和歌山の大学院・大学・短大で美術系分野（絵画・工芸・映像・デザイン・美学・美術史・文化財保存等）を専修する学業優秀者。【特有条件】下宿生・自宅通学生で金額が異なる。【スケジュール】募集時期は例年4月中旬〜下旬（学校から財団への提出期限は例年4月28日頃）。要確認。【支給人数】2025年度実績：応募98名中41名採用、継続含め計75名。"
+  },
+  {
+    "id": "S045",
+    "name": "在日韓国奨学会",
+    "amount": null,
+    "deadline": "2026-04-24",
+    "url": "https://ksaj56.stars.ne.jp/application/",
+    "conditions": {
+      "grades": ["B2", "B3", "B4"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "2026年度実績：3月25日〜4月24日",
+    "description": "【申込方法】個人申請（大阪市北区の事務局へ郵送）。【併用可否】3種類（冠名奨学金・韓奨奨学金A・B）のうちAコースは併用不可、Bコースは併用可。冠名奨学金の併給可否は資料に明記なし。【対象者】近畿地区の大学に在学する学部2〜4年生。韓半島にルーツを持つ、または日韓関係発展に関心を有する学生。【特有条件】年5回の例会への出席義務（欠席が続くと支給中止の可能性）。1年以上受給でOB・OG会に自動加入。【スケジュール】募集時期は2026年度実績：3月25日〜4月24日。4月分から翌年3月分まで年5回に分けて支給。【支給人数】20名ほど。"
+  },
+  {
+    "id": "S046",
+    "name": "国分記念財団",
+    "amount": 600000,
+    "deadline": "2026-05-31",
+    "url": "https://www.kokubu.co.jp/zaidan/",
+    "conditions": {
+      "grades": ["B2"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": 3.0
+    },
+    "deadline_note": "2026年度実績：4月1日〜5月31日",
+    "description": "【申込方法】個人申請（ガクシー経由）。【併用可否】JASSO給付・大学独自制度は併用可、民間奨学金は原則併用不可。【対象者】2026年度に新2年生に進学する日本国籍の学生。GPA3.0以上、25歳未満。【特有条件】持続可能な食の未来への関心が条件。小論文（1200字程度）、大学の推薦書（指導教員可）が必要。毎年5月末までの活動報告義務。【スケジュール】募集時期は2026年度実績：4月1日〜5月31日。8月中旬までに採否通知。初回は4〜8月分をまとめて8月31日までに給付。【支給人数】10名程度。"
+  },
+  {
+    "id": "S047",
+    "name": "日本文化教育振興財団",
+    "amount": 240000,
+    "deadline": "2026-06-10",
+    "url": "http://nichibunf.or.jp/scholarship/index.html",
+    "conditions": {
+      "grades": ["B2", "B3", "B4"],
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": 2.5
+    },
+    "deadline_note": "令和8年度実績：6月10日（財団事務局必着）",
+    "description": "【申込方法】大学推薦（各学校の奨学金担当窓口経由）。【併用可否】要確認（記載なし）。【対象者】財団指定の大阪・京都・兵庫の国公立大学、大阪芸術大学等に通う大学2〜4年生（6年制は5・6年生含む）。GPA2.5以上。【特有条件】世帯人員に応じた家計基準あり（例：4人世帯・給与所得者700万円以内）。学校長等の推薦書が必要。【スケジュール】募集時期は令和8年度実績：6月10日（財団事務局必着）。7月中旬に採否通知予定、初回支給は7月末日ごろ予定。【支給人数】大学生10名程度（別枠で高校生10名程度）。"
+  },
+  {
+    "id": "S048",
+    "name": "朝鮮奨学会・在日本朝鮮人教育会",
+    "amount": null,
+    "deadline": null,
+    "url": null,
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "朝鮮奨学会は継続応募4月上旬〜下旬、新規応募4月上旬〜5月上旬という情報あり（年度により変動）",
+    "description": "【申込方法】要確認（在日本朝鮮人教育会は個人応募との情報あり）。【併用可否】要確認。【対象者】特別永住者等の韓国・朝鮮籍学生。在日本朝鮮人教育会は30歳未満、国籍不問という情報あり。【特有条件】「朝鮮奨学会」と「在日本朝鮮人教育会」は別団体の可能性があり、本項目は両者の情報が混在している点に注意が必要。【スケジュール】募集時期は朝鮮奨学会は継続応募4月上旬〜下旬、新規応募4月上旬〜5月上旬という情報あり（年度により変動）。要確認。【支給人数】不明。"
+  },
+  {
+    "id": "S049",
+    "name": "ジェイリース奨学基金",
+    "amount": 600000,
+    "deadline": null,
+    "url": null,
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "2025年度実績：6月2日〜9月19日",
+    "description": "【申込方法】個人申請（郵送または公式サイト応募フォーム）。【併用可否】要確認（記載なし）。【対象者】視覚障がいのある学生。【特有条件】小論文（700〜800字）の提出が必要。【スケジュール】募集時期は2025年度実績：6月2日〜9月19日。年3回（12月末・4月末・8月末）に分けて支給。【支給人数】5名程度。"
+  },
+  {
+    "id": "S050",
+    "name": "米濱・リンガーハット財団",
+    "amount": null,
+    "deadline": null,
+    "url": null,
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": ["教育学部"],
+      "majors": null,
+      "field_tags": null,
+      "residences": ["鳥取県", "長崎県"],
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年5月下旬〜6月上旬（大学により異なる）",
+    "description": "【申込方法】大学推薦（学校窓口経由で提出）。【併用可否】他制度併用可（複数大学掲示で明記）。【対象者】鳥取県・長崎県内の高校等を卒業し、他都道府県の大学2〜4年生・大学院生。【特有条件】GPA3.0以上、所得要件あり（給与収入世帯で世帯合計600万円未満目安）。【スケジュール】募集時期は例年5月下旬〜6月上旬（大学により異なる）。合否通知は例年8月中旬。【支給人数】全体で6名程度。"
+  },
+  {
+    "id": "S051",
+    "name": "伊藤忠兵衛基金",
+    "amount": null,
+    "deadline": null,
+    "url": null,
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": null,
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "例年4月下旬〜5月上旬（大学ごとの学内締切あり）",
+    "description": "【申込方法】大学推薦（総長・学長等の推薦、指導教員の推薦が必要）。【併用可否】他制度併用可（明記）。【対象者】京都・滋賀・岐阜・愛知以西の国立大学大学院、博士後期課程1年生。学部生は対象外。【特有条件】各校1名程度の推薦枠（既取得者を含め各校計3名まで）。原則3年間継続可能。【スケジュール】募集時期は例年4月下旬〜5月上旬（大学ごとの学内締切あり）。要確認。【支給人数】各校1名程度。"
+  },
+  {
+    "id": "S052",
+    "name": "大学女性協会",
+    "amount": null,
+    "deadline": "2026-08-25",
+    "url": null,
+    "conditions": {
+      "grades": null,
+      "school_types": ["国立大学"],
+      "faculties": null,
+      "majors": null,
+      "field_tags": null,
+      "residences": null,
+      "income_max": null,
+      "gpa_min": null
+    },
+    "deadline_note": "2026年度実績：一般奨学金の締切は8月25日",
+    "description": "【申込方法】個人申請（推定。詳細は財団要確認）。【併用可否】要確認。【対象者】大学もしくは大学院に1年以上在籍する女子学生（一般学生奨学金）。社会福祉学生奨学金は身体に障がいのある女子学生で学部1年以上も対象。前回「学部生は対象外」としていたのは誤りの可能性。【特有条件】一般学生奨学金・社会福祉学生奨学金・安井医学奨学金の3種類がある。【スケジュール】募集時期は2026年度実績：一般奨学金の締切は8月25日。要確認。【支給人数】不明。"
+  }
+]

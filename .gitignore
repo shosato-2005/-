@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+backend/data/old_JSON.txt
