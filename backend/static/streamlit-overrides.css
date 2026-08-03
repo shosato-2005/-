@@ -130,29 +130,14 @@ button[kind="primaryFormSubmit"]:hover {
 }
 
 /* — 検索結果カード（app.py の _render_result_card 用） — */
-.sr-card-link {
-  display: block;
-  color: var(--color-text);
-  text-decoration: none;
-  height: 100%;
-}
 .sr-card {
-  cursor: pointer;
-  height: 100%;
-  transition: background 0.15s ease;
-}
-.sr-card:hover {
-  background: color-mix(in srgb, var(--color-text) 4%, transparent);
+  margin-bottom: 4px;
 }
 .sr-tags {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
   margin: 8px 0;
-}
-.sr-card-btn {
-  margin-top: 14px;
-  pointer-events: none; /* クリックはカード全体を包む<a>が担うため、見た目だけのボタン */
 }
 .sr-section-label {
   font-size: 11px;

@@ -283,8 +283,11 @@ def _render_result_card(result: Dict) -> None:
     if len(summary) > 70:
         summary = summary[:70] + "…"
 
+    # 「詳細を見る」はカードHTMLの外側にある実際のst.buttonが担う（下記コメント参照）。
+    # カード全体を<a href="?sid=...">で囲む案は、クリック時にブラウザのフルページ遷移が
+    # 発生してStreamlitのセッション(st.session_state["results"])が失われる不具合があった
+    # ため撤回し、WebSocket経由でセッションを保ったまま遷移できるst.buttonに統一した。
     card_html = (
-        f'<a href="?sid={html.escape(result["scholarship_id"])}" class="sr-card-link">'
         f'<div class="card blueprint elev-sm sr-card">'
         f"{CORNER_MARKS}"
         f'<div class="card-kicker">{html.escape(result["scholarship_id"])} ・ {_stars_display(result["stars"])}</div>'
@@ -293,10 +296,16 @@ def _render_result_card(result: Dict) -> None:
         f'<p class="card-body">{html.escape(summary)}</p>'
         f'<div class="card-meta">{ICON_CALENDAR}<span>締切: {html.escape(_deadline_display(result))}</span></div>'
         f'<div class="card-meta">{ICON_COIN}<span>{html.escape(_amount_display(result))}</span></div>'
-        f'<span class="btn btn-secondary btn-block blueprint sr-card-btn">詳細を見る</span>'
-        f"</div></a>"
+        f"</div>"
     )
     st.markdown(card_html, unsafe_allow_html=True)
+    st.button(
+        "詳細を見る",
+        key=f"detail_btn_{result['scholarship_id']}",
+        on_click=_go_to_detail,
+        args=(result["scholarship_id"],),
+        use_container_width=True,
+    )
 
 
 def _conditions_bullets(scholarship: Scholarship) -> List[str]:
@@ -506,10 +515,6 @@ def main() -> None:
     st.set_page_config(page_title="奨学金サーチ", page_icon="🎓", layout="wide")
     _inject_industry_css()
     _render_navbar()
-
-    if "sid" in st.query_params:
-        _go_to_detail(st.query_params["sid"])
-        st.query_params.clear()
 
     st.session_state.setdefault("screen", "list")
 
