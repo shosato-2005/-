@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html
 import re
 import unicodedata
 from pathlib import Path
@@ -12,6 +13,7 @@ from models import DEFAULT_SCHOOL_TYPE, Scholarship, UserProfile
 from recommend import load_scholarships, recommend
 
 DATA_PATH = Path(__file__).parent / "data" / "scholarships_sample.json"
+STATIC_DIR = Path(__file__).parent / "static"
 
 PREFECTURES = [
     "北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県",
@@ -202,42 +204,206 @@ def _deadline_display(result: Dict) -> str:
     return "締め切り要確認"
 
 
-def _render_result(result: Dict) -> None:
-    amount_display = f"{result['amount']:,}円" if result["amount"] is not None else "金額要確認"
-
-    with st.container(border=True):
-        col_main, col_stars = st.columns([3, 1])
-        with col_main:
-            st.subheader(result["name"])
-            st.write(f"金額: {amount_display}　|　締切: {_deadline_display(result)}")
-        with col_stars:
-            st.markdown(f"### {_stars_display(result['stars'])}")
-
-        if result["num_recipients"]:
-            st.write(f"支給人数: {result['num_recipients']}")
-        if result["application_method"]:
-            st.write(f"申込方法: {result['application_method']}")
-        if result["combinability_note"]:
-            st.write(f"併用可否: {result['combinability_note']}")
-            if _combinability_needs_confirmation(result["combinability_note"]):
-                st.caption("⚠️ 援助の種類（給付型／貸与型／授業料免除など）によって併用可否が異なります。各自要確認。")
-        if result["description"]:
-            st.caption(result["description"])
-
-        if result["deductions"]:
-            st.caption("減点項目: " + "、".join(result["deductions"]))
-
-        if result["url"]:
-            st.link_button("応募ページへ", result["url"])
-        else:
-            st.caption("応募先要確認")
+def _amount_display(result: Dict) -> str:
+    return f"{result['amount']:,}円" if result["amount"] is not None else "金額要確認"
 
 
-def _render_sidebar_filters() -> None:
+# ── Industry デザインシステム: インラインSVGアイコン（デザイン案から転記） ──
+ICON_CALENDAR = (
+    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'
+    '<rect x="3" y="4" width="18" height="18" rx="0"></rect><path d="M16 2v4"></path>'
+    '<path d="M8 2v4"></path><path d="M3 10h18"></path></svg>'
+)
+ICON_COIN = (
+    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'
+    '<circle cx="12" cy="12" r="10"></circle><path d="M12 7v10"></path>'
+    '<path d="M9 10h6"></path><path d="M9 14h3"></path></svg>'
+)
+ICON_ARROW_RIGHT = (
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'
+    '<path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>'
+)
+CORNER_MARKS = (
+    '<i class="corner tl"></i><i class="corner tr"></i>'
+    '<i class="corner bl"></i><i class="corner br"></i>'
+)
+
+_COMBINABILITY_TAG_CLASS = {
+    "JASSO給付との併用可": "tag tag-accent",
+    "民間給付との併用可": "tag tag-accent",
+    "条件付き可": "tag tag-outline",
+    "不可": "tag tag-neutral",
+    "不明": "tag tag-neutral",
+}
+
+
+def _tags_html(result: Dict) -> str:
+    tags = []
+    for category in sorted(_combinability_categories(result["combinability_note"])):
+        css_class = _COMBINABILITY_TAG_CLASS.get(category, "tag tag-neutral")
+        tags.append(f'<span class="{css_class}">{html.escape(category)}</span>')
+    for category in sorted(_application_method_categories(result["application_method"])):
+        tags.append(f'<span class="tag tag-neutral">{html.escape(category)}</span>')
+    if _combinability_needs_confirmation(result["combinability_note"]):
+        tags.append('<span class="tag tag-outline">併用可否は要確認</span>')
+    return "".join(tags)
+
+
+def _inject_industry_css() -> None:
+    industry_css = (STATIC_DIR / "industry-styles.css").read_text(encoding="utf-8")
+    overrides_css = (STATIC_DIR / "streamlit-overrides.css").read_text(encoding="utf-8")
+    st.markdown(f"<style>{industry_css}\n{overrides_css}</style>", unsafe_allow_html=True)
+
+
+def _render_navbar() -> None:
+    st.markdown(
+        '<nav class="nav">'
+        '<span class="nav-brand">奨学金サーチ</span>'
+        '<a href="#" aria-current="page">検索</a>'
+        '<a href="#">使い方</a>'
+        "</nav>",
+        unsafe_allow_html=True,
+    )
+
+
+def _go_to_detail(scholarship_id: str) -> None:
+    st.session_state["screen"] = "detail"
+    st.session_state["selected_scholarship_id"] = scholarship_id
+
+
+def _back_to_list() -> None:
+    st.session_state["screen"] = "list"
+
+
+def _render_result_card(result: Dict) -> None:
+    summary = result["description"] or ""
+    if len(summary) > 70:
+        summary = summary[:70] + "…"
+
+    card_html = (
+        f'<a href="?sid={html.escape(result["scholarship_id"])}" class="sr-card-link">'
+        f'<div class="card blueprint elev-sm sr-card">'
+        f"{CORNER_MARKS}"
+        f'<div class="card-kicker">{html.escape(result["scholarship_id"])} ・ {_stars_display(result["stars"])}</div>'
+        f'<div class="card-title">{html.escape(result["name"])}</div>'
+        f'<div class="sr-tags">{_tags_html(result)}</div>'
+        f'<p class="card-body">{html.escape(summary)}</p>'
+        f'<div class="card-meta">{ICON_CALENDAR}<span>締切: {html.escape(_deadline_display(result))}</span></div>'
+        f'<div class="card-meta">{ICON_COIN}<span>{html.escape(_amount_display(result))}</span></div>'
+        f'<span class="btn btn-secondary btn-block blueprint sr-card-btn">詳細を見る</span>'
+        f"</div></a>"
+    )
+    st.markdown(card_html, unsafe_allow_html=True)
+
+
+def _conditions_bullets(scholarship: Scholarship) -> List[str]:
+    """奨学金自体の応募条件を、実データのconditionsから箇条書き文言に変換する。"""
+    c = scholarship.conditions
+    bullets = []
+    if c.grades:
+        bullets.append(f"学年: {'、'.join(c.grades)}")
+    if c.school_types:
+        bullets.append(f"学校種別: {'、'.join(c.school_types)}")
+    if c.faculties:
+        bullets.append(f"学部: {'、'.join(c.faculties)}")
+    if c.majors:
+        bullets.append(f"専攻・コース: {'、'.join(c.majors)}")
+    if c.field_tags:
+        bullets.append(f"分野: {'、'.join(c.field_tags)}")
+    if c.residences:
+        bullets.append(f"居住地: {'、'.join(c.residences)}")
+    if c.income_max is not None:
+        bullets.append(f"世帯収入: {c.income_max:,}円以下")
+    if c.gpa_min is not None:
+        bullets.append(f"GPA: {c.gpa_min}以上")
+    if not bullets:
+        bullets.append("学校種別・学部以外に特別な条件の指定はありません。")
+    return bullets
+
+
+def _render_detail_screen(scholarships: List[Scholarship]) -> None:
+    results = st.session_state.get("results") or []
+    selected_id = st.session_state.get("selected_scholarship_id")
+    result = next((r for r in results if r["scholarship_id"] == selected_id), None)
+    scholarship = next((s for s in scholarships if s.id == selected_id), None)
+
+    st.button("← 検索結果に戻る", key="back_to_list_btn", on_click=_back_to_list)
+
+    if result is None or scholarship is None:
+        st.warning("この奨学金の情報が見つかりませんでした。検索結果に戻ってやり直してください。")
+        return
+
+    conditions_html = "".join(f"<li>{html.escape(b)}</li>" for b in _conditions_bullets(scholarship))
+    steps = [result["application_method"]] if result["application_method"] else ["応募方法の詳細は公式サイトでご確認ください。"]
+    steps_html = "".join(f"<li>{html.escape(s)}</li>" for s in steps)
+    recipients_html = (
+        f'<p class="text-muted" style="font-size:13px;margin-top:-6px">支給人数: {html.escape(result["num_recipients"])}</p>'
+        if result["num_recipients"] else ""
+    )
+    mixed_warning_html = (
+        '<p class="text-muted" style="font-size:12px">'
+        "⚠️ 援助の種類（給付型／貸与型／授業料免除など）によって併用可否が異なります。各自要確認。</p>"
+        if _combinability_needs_confirmation(result["combinability_note"]) else ""
+    )
+    deductions_html = (
+        f'<p class="text-muted" style="font-size:12px">減点項目: {html.escape("、".join(result["deductions"]))}</p>'
+        if result["deductions"] else ""
+    )
+
+    if result["url"]:
+        apply_button_html = (
+            f'<a class="btn btn-primary blueprint" href="{html.escape(result["url"])}" target="_blank" rel="noopener noreferrer">'
+            f"{CORNER_MARKS}公式サイトで詳細を確認{ICON_ARROW_RIGHT}</a>"
+        )
+    else:
+        apply_button_html = '<p class="text-muted">応募先要確認（公式サイトのURLが未公表です）</p>'
+
+    detail_html = (
+        '<div class="card blueprint elev-md sr-detail-card">'
+        f"{CORNER_MARKS}"
+        f'<div class="card-kicker">{html.escape(result["scholarship_id"])} ・ {_stars_display(result["stars"])}</div>'
+        f'<h1 style="font-size:32px;margin:6px 0 14px">{html.escape(result["name"])}</h1>'
+        f'<div class="sr-tags" style="margin-bottom:18px">{_tags_html(result)}</div>'
+        f'{mixed_warning_html}'
+        f'<p style="font-size:15px;line-height:1.75;opacity:0.85;margin:0 0 24px">{html.escape(result["description"] or "説明文は未登録です。")}</p>'
+        '<div class="sr-section-label">支給内容</div>'
+        f'<p style="font-size:15px;line-height:1.6;margin:0 0 6px">{html.escape(_amount_display(result))}</p>'
+        f"{recipients_html}"
+        '<div class="sr-section-label" style="margin-top:24px">対象条件</div>'
+        f'<ul style="margin:0 0 24px;padding-left:20px;font-size:15px;line-height:1.8">{conditions_html}</ul>'
+        '<div class="sr-section-label">応募方法とスケジュール</div>'
+        f'<ol style="margin:0 0 12px;padding-left:20px;font-size:15px;line-height:1.8">{steps_html}</ol>'
+        f'<div class="card-meta" style="margin-bottom:6px">{ICON_CALENDAR}<span>応募締切: {html.escape(_deadline_display(result))}</span></div>'
+        f"{deductions_html}"
+        '<div style="margin-top:20px">'
+        f"{apply_button_html}"
+        "</div>"
+        "</div>"
+    )
+    st.markdown(detail_html, unsafe_allow_html=True)
+
+
+def _render_sidebar(scholarships: List[Scholarship]) -> None:
     with st.sidebar:
-        st.header("絞り込み")
+        st.markdown('<div class="card-kicker">絞り込み検索</div>', unsafe_allow_html=True)
 
-        st.subheader("併用可否")
+        with st.form("user_profile_form"):
+            st.text_input("学校種別", value=DEFAULT_SCHOOL_TYPE, disabled=True)
+            residence = st.selectbox("居住地", PREFECTURES, index=PREFECTURES.index("大阪府"))
+            grade = st.selectbox("学年", GRADES)
+            major = st.selectbox("専攻・コース", MAJORS)
+            gpa = st.number_input("GPA", min_value=0.0, max_value=4.0, value=3.0, step=0.01, format="%.2f")
+            parent_income = st.number_input(
+                "両親の年収（世帯収入・円）", min_value=0, max_value=50_000_000, value=5_000_000, step=100_000
+            )
+            submitted = st.form_submit_button("奨学金をレコメンドする", type="primary")
+
+        st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
+
+        st.markdown('<div class="card-kicker">併用可否</div>', unsafe_allow_html=True)
         col_a, col_b = st.columns(2)
         col_a.button(
             "全て選択", key="combinability_all_btn",
@@ -246,7 +412,7 @@ def _render_sidebar_filters() -> None:
         col_b.button("クリア", key="combinability_clear_btn", on_click=_clear_selection, args=("combinability_filter",))
         st.multiselect("併用可否で絞り込む", COMBINABILITY_OPTIONS, key="combinability_filter", label_visibility="collapsed")
 
-        st.subheader("申込方法")
+        st.markdown('<div class="card-kicker" style="margin-top:8px">申込方法</div>', unsafe_allow_html=True)
         col_c, col_d = st.columns(2)
         col_c.button(
             "全て選択", key="method_all_btn",
@@ -254,33 +420,6 @@ def _render_sidebar_filters() -> None:
         )
         col_d.button("クリア", key="method_clear_btn", on_click=_clear_selection, args=("method_filter",))
         st.multiselect("申込方法で絞り込む", APPLICATION_METHOD_OPTIONS, key="method_filter", label_visibility="collapsed")
-
-
-def main() -> None:
-    st.set_page_config(page_title="奨学金レコメンドツール", page_icon="🎓")
-    st.title("🎓 奨学金レコメンドツール")
-    st.caption("大阪教育大学の学生向けプロトタイプ。入力情報はこの画面の表示のみに使われ、保存されません。")
-
-    _render_sidebar_filters()
-
-    scholarships = _load_scholarships(str(DATA_PATH))
-
-    with st.form("user_profile_form"):
-        st.text_input("学校種別", value=DEFAULT_SCHOOL_TYPE, disabled=True)
-
-        col1, col2 = st.columns(2)
-        with col1:
-            residence = st.selectbox("居住地", PREFECTURES, index=PREFECTURES.index("大阪府"))
-            grade = st.selectbox("学年", GRADES)
-        with col2:
-            major = st.selectbox("専攻・コース", MAJORS)
-            gpa = st.number_input("GPA", min_value=0.0, max_value=4.0, value=3.0, step=0.01, format="%.2f")
-
-        parent_income = st.number_input(
-            "両親の年収（世帯収入・円）", min_value=0, max_value=50_000_000, value=5_000_000, step=100_000
-        )
-
-        submitted = st.form_submit_button("奨学金をレコメンドする")
 
     if submitted:
         user = UserProfile(
@@ -294,39 +433,94 @@ def main() -> None:
         )
         st.session_state["results"] = recommend(user, scholarships)
 
+
+def _render_list_screen() -> None:
+    st.markdown(
+        '<div style="padding:8px 0 4px">'
+        '<h1 style="font-size:38px;margin:0 0 8px">大教生のための奨学金検索</h1>'
+        '<p class="text-muted" style="font-size:15px;line-height:1.6;max-width:64ch">'
+        "条件を絞り込んで、大阪教育大学の学生向け奨学金をまとめて比較できます。<br>"
+        "入力した情報はこの画面の表示のみに使われ、保存されません。"
+        "</p></div>",
+        unsafe_allow_html=True,
+    )
+
     results = st.session_state.get("results")
-    if results is not None:
-        st.divider()
+    if results is None:
+        st.info("左のサイドバーでプロフィールを入力し、「奨学金をレコメンドする」を押してください。")
+        return
 
-        combinability_selected = st.session_state.get("combinability_filter", [])
-        method_selected = st.session_state.get("method_filter", [])
-        active_filters = combinability_selected or method_selected
+    combinability_selected = st.session_state.get("combinability_filter", [])
+    method_selected = st.session_state.get("method_filter", [])
+    active_filters = combinability_selected or method_selected
 
-        filtered_results = _filter_results(results, combinability_selected, method_selected)
+    filtered_results = _filter_results(results, combinability_selected, method_selected)
 
-        col_sort, col_count = st.columns(2)
-        with col_sort:
-            sort_label = st.selectbox("並び替え", list(SORT_OPTIONS.keys()))
-        with col_count:
-            count_label = st.selectbox("表示件数", list(DISPLAY_COUNT_OPTIONS.keys()))
+    col_sort, col_count = st.columns(2)
+    with col_sort:
+        sort_label = st.selectbox("並び替え", list(SORT_OPTIONS.keys()))
+    with col_count:
+        count_label = st.selectbox("表示件数", list(DISPLAY_COUNT_OPTIONS.keys()))
 
-        sorted_results = _sort_results(filtered_results, sort_label)
-        display_count = DISPLAY_COUNT_OPTIONS[count_label]
-        shown = sorted_results if display_count is None else sorted_results[:display_count]
+    sorted_results = _sort_results(filtered_results, sort_label)
+    display_count = DISPLAY_COUNT_OPTIONS[count_label]
+    shown = sorted_results if display_count is None else sorted_results[:display_count]
 
-        if active_filters:
-            applied = "、".join(combinability_selected + method_selected)
-            st.info(f"🔍 フィルタ適用中: {applied}（全{len(results)}件中{len(filtered_results)}件が該当）")
+    if active_filters:
+        applied = "、".join(combinability_selected + method_selected)
+        st.info(f"🔍 フィルタ適用中: {applied}（全{len(results)}件中{len(filtered_results)}件が該当）")
 
-        st.subheader(f"あなたへのおすすめ奨学金（{len(shown)}/{len(filtered_results)}件表示）")
-        st.caption("★は入力した条件との一致度を表します（★5＝全条件に完全一致、外れる条件が増えるほど星が減ります）。")
+    st.markdown(
+        f'<p style="font-size:13px;letter-spacing:0.05em;opacity:0.6;margin:4px 0 16px;'
+        f'text-transform:uppercase">{len(shown)} / {len(filtered_results)} 件表示 '
+        f"（★は入力した条件との一致度。★5＝全条件に完全一致）</p>",
+        unsafe_allow_html=True,
+    )
 
-        if not shown and active_filters:
-            st.warning("この条件に合う奨学金が見つかりませんでした。サイドバーのフィルタを減らすか「クリア」で条件を緩めてみてください。")
-        elif not shown:
-            st.info("該当する奨学金が見つかりませんでした。")
-        for result in shown:
-            _render_result(result)
+    if not shown and active_filters:
+        st.markdown(
+            f'<div class="card blueprint sr-empty">{CORNER_MARKS}'
+            '<p class="card-body">この条件に合う奨学金が見つかりませんでした。'
+            "サイドバーのフィルタを減らすか「クリア」で条件を緩めてみてください。</p></div>",
+            unsafe_allow_html=True,
+        )
+        return
+    if not shown:
+        st.markdown(
+            f'<div class="card blueprint sr-empty">{CORNER_MARKS}'
+            '<p class="card-body">該当する奨学金が見つかりませんでした。</p></div>',
+            unsafe_allow_html=True,
+        )
+        return
+
+    columns_per_row = 3
+    for row_start in range(0, len(shown), columns_per_row):
+        row = shown[row_start:row_start + columns_per_row]
+        cols = st.columns(columns_per_row)
+        for col, result in zip(cols, row):
+            with col:
+                _render_result_card(result)
+
+
+def main() -> None:
+    st.set_page_config(page_title="奨学金サーチ", page_icon="🎓", layout="wide")
+    _inject_industry_css()
+    _render_navbar()
+
+    if "sid" in st.query_params:
+        _go_to_detail(st.query_params["sid"])
+        st.query_params.clear()
+
+    st.session_state.setdefault("screen", "list")
+
+    scholarships = _load_scholarships(str(DATA_PATH))
+
+    _render_sidebar(scholarships)
+
+    if st.session_state["screen"] == "detail":
+        _render_detail_screen(scholarships)
+    else:
+        _render_list_screen()
 
 
 if __name__ == "__main__":

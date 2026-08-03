@@ -1,0 +1,172 @@
+/* Streamlitのネイティブウィジェットを、Industryデザインシステムのトークンに寄せるための
+   上書きCSS。Streamlit内部のDOM構造(BaseWebベース)に依存するため、Streamlitの
+   バージョンが変わるとセレクタが効かなくなる可能性がある。ピクセル完全一致は
+   保証できないが、色・フォント・角の直角化など見た目の近似を目的とする。 */
+
+.stApp {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* Streamlit標準のヘッダー(ハンバーガーメニュー・Deployボタン)は、独自のnavバーと
+   重複するため透明化して高さだけ残す */
+[data-testid="stHeader"] {
+  background: transparent;
+}
+
+[data-testid="stSidebar"] {
+  background: var(--color-bg);
+  border-right: 1px solid var(--color-divider);
+  min-width: 300px !important;
+  max-width: 340px !important;
+}
+
+[data-testid="stSidebar"] > div {
+  padding-top: var(--space-4);
+}
+
+h1, h2, h3, h4, h5, h6,
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  letter-spacing: -0.015em;
+}
+
+/* — 入力欄(text_input / number_input / selectbox / multiselect) — */
+[data-testid="stTextInput"] input,
+[data-testid="stNumberInput"] input,
+div[data-baseweb="select"] > div {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-divider) !important;
+  border-radius: 0 !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-body) !important;
+  font-size: 14px !important;
+}
+
+[data-testid="stTextInput"] input:hover,
+[data-testid="stNumberInput"] input:hover,
+div[data-baseweb="select"]:hover > div {
+  border-color: color-mix(in srgb, var(--color-text) 45%, transparent) !important;
+}
+
+[data-testid="stTextInput"] input:focus,
+[data-testid="stNumberInput"] input:focus,
+div[data-baseweb="select"]:focus-within > div {
+  border-color: var(--color-accent) !important;
+  box-shadow: none !important;
+}
+
+[data-testid="stWidgetLabel"] label,
+[data-testid="stWidgetLabel"] p {
+  font-size: 12px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+/* multiselectで選択済みの値が入るタグ */
+div[data-baseweb="tag"] {
+  background: var(--color-accent) !important;
+  border-radius: 0 !important;
+}
+
+/* — ボタン — */
+[data-testid="stBaseButton-secondary"],
+[data-testid="stBaseButton-secondaryFormSubmit"],
+button[kind="secondary"],
+button[kind="secondaryFormSubmit"] {
+  background: transparent !important;
+  border: 1px solid var(--color-divider) !important;
+  border-radius: 0 !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-heading) !important;
+  font-weight: var(--font-heading-weight) !important;
+}
+[data-testid="stBaseButton-secondary"]:hover,
+[data-testid="stBaseButton-secondaryFormSubmit"]:hover,
+button[kind="secondary"]:hover,
+button[kind="secondaryFormSubmit"]:hover {
+  background: color-mix(in srgb, var(--color-text) 7%, transparent) !important;
+  border-color: var(--color-divider) !important;
+  color: var(--color-text) !important;
+}
+
+[data-testid="stBaseButton-primary"],
+[data-testid="stBaseButton-primaryFormSubmit"],
+button[kind="primary"],
+button[kind="primaryFormSubmit"] {
+  background: var(--color-accent) !important;
+  border: 1px solid var(--color-accent) !important;
+  border-radius: 0 !important;
+  color: var(--color-bg) !important;
+  font-family: var(--font-heading) !important;
+  font-weight: var(--font-heading-weight) !important;
+}
+[data-testid="stBaseButton-primary"]:hover,
+[data-testid="stBaseButton-primaryFormSubmit"]:hover,
+button[kind="primary"]:hover,
+button[kind="primaryFormSubmit"]:hover {
+  background: var(--color-accent-600) !important;
+  border-color: var(--color-accent-600) !important;
+}
+
+/* サイドバー内の「全て選択」「クリア」ボタンはghost風に小さく */
+[data-testid="stSidebar"] [data-testid="stButton"] button {
+  font-size: 12px !important;
+  padding: 4px 8px !important;
+}
+
+[data-testid="stForm"] {
+  border: none !important;
+  padding: 0 !important;
+}
+
+[data-testid="stAlert"] {
+  border-radius: 0 !important;
+  border: 1px solid var(--color-divider) !important;
+  background: var(--color-surface) !important;
+}
+
+/* — 検索結果カード（app.py の _render_result_card 用） — */
+.sr-card-link {
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
+  height: 100%;
+}
+.sr-card {
+  cursor: pointer;
+  height: 100%;
+  transition: background 0.15s ease;
+}
+.sr-card:hover {
+  background: color-mix(in srgb, var(--color-text) 4%, transparent);
+}
+.sr-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+.sr-card-btn {
+  margin-top: 14px;
+  pointer-events: none; /* クリックはカード全体を包む<a>が担うため、見た目だけのボタン */
+}
+.sr-section-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 8px;
+}
+.sr-empty {
+  padding: 32px;
+  text-align: center;
+  margin-top: 12px;
+}
+.sr-detail-card {
+  padding: 32px;
+  max-width: 880px;
+}
