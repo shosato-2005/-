@@ -27,7 +27,15 @@ python demo.py
 
 If console output looks garbled, force UTF-8: `PYTHONIOENCODING=utf-8 python demo.py`.
 
-There is no test suite or linter configured yet.
+```bash
+# Run the test suite (from the project root, not backend/)
+pip install -r requirements-dev.txt
+pytest
+```
+
+Tests live in `backend/tests/` and cover `models.py`/`scoring.py`/`recommend.py` only (core matching/scoring logic — no Streamlit UI tests). `pytest.ini` at the project root sets `pythonpath = backend` so the tests can use the same flat unqualified imports (`from models import ...`) as the app code, without needing `backend/` as the working directory.
+
+There is no linter configured yet.
 
 ## Architecture
 
